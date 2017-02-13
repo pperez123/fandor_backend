@@ -1,7 +1,7 @@
 # Fandor Back-end Coding Challenge
 
 The coding challenge entailed developing a simple web API to show and update sample film data. 
-The author chose the Ruby on Rails web development framework for the implementation of the challenge requirements:
+The developer chose the Ruby on Rails web development framework for implementation of the challenge requirements:
  - RESTful endpoints for retrieving a list of films or an individual film
  - Support for allowing a user to rate a specific film
  - Include average rating for a film as one of its attributes
@@ -10,7 +10,7 @@ The author chose the Ruby on Rails web development framework for the implementat
 ##Films API
 
 The primary endpoint for the supported film data operations is "/api/films".
-This endpoint supports operations related to retrieving the full list of films,
+This endpoint supports GET and PUT RESTful operations related to retrieving the full list of films,
 a single film, and allowing a user to rate a particular film.
 
 ###List of Films
