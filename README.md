@@ -15,11 +15,22 @@ a single film, and allowing a user to rate a particular film.
 
 ###List of Films
 
-`GET /api/films`
+`GET /api/films{?fields[films],sort}`
 
-or
+Example:
 
-`GET http://localhost:3000/api/films`
+`GET http://localhost:3000/api/films?sort=-average_rating,-year,title&fields[film]=title,description`
+
+####URI Paramters (Optional)
+
+* fields[film] (String) - Allows the client to specify which film attributes to include
+in the result set. Possible values include: title, description, url_slug, year
+related_film_ids, and average_rating.
+* sort (String) - List of film attributes used to sort the result set. The sort fields are
+ applied in the order specified. The sort order for each field is ascending unless prefixed with
+ a minus/hyphen ("-"), in which case it will be in descending order.
+
+####Description
 
 To retrieve the list of all films, the client sends a GET request to "/api/films".
 If successful, the client will receive a 200 response with a JSON data payload 
@@ -77,11 +88,19 @@ An empty array will be returned for no results.
 
 ### Retrieving one film
 
-`GET /api/films/{id}`
+`GET /api/films/{id}{?fields[film]}`
 
 or
 
-`GET http://localhost:3000/api/films/1`
+`GET http://localhost:3000/api/films/1?fields[film]=title,description`
+
+####URI Paramters (Optional)
+
+* fields[film] (String) - Allows the client to specify which film attributes to include
+in the result set. Possible values include: title, description, url_slug, year
+related_film_ids, and average_rating.
+
+####Description
 
 To retrieve data on a single film, the client sends a GET request to "/api/films/"
 and appends the id of the requested film. If the film exists, the client receives a JSON
