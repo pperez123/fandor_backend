@@ -23,7 +23,7 @@ Example:
 
 ####URI Parameters (Optional)
 
-* fields[film] (String) - Allows the client to specify which film attributes to include
+* fields\[film] (String) - Allows the client to specify which film attributes to include
 in the result set. Possible values include: title, description, url_slug, year
 related_film_ids, and average_rating.
 * sort (String) - List of film attributes used to sort the result set. The sort fields are
@@ -90,13 +90,13 @@ An empty array will be returned for no results.
 
 `GET /api/films/{id}{?fields[film]}`
 
-or
+Example:
 
 `GET http://localhost:3000/api/films/1?fields[film]=title,description`
 
 ####URI Parameters (Optional)
 
-* fields[film] (String) - Allows the client to specify which film attributes to include
+* fields\[film] (String) - Allows the client to specify which film attributes to include
 in the result set. Possible values include: title, description, url_slug, year
 related_film_ids, and average_rating.
 
@@ -137,7 +137,7 @@ id's for related films and the average user rating.
 
 `PUT /api/films/{id}`
 
-or 
+Example: 
 
 `PUT http://localhost:3000/api/films/1`
 
