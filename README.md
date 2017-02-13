@@ -11,7 +11,7 @@ The developer chose the Ruby on Rails web development framework for implementati
 
 The primary endpoint for the supported film data operations is "/api/films".
 This endpoint supports GET and PUT RESTful operations related to retrieving the full list of films,
-a single film, and allowing a user to rate a particular film.
+a single film, and allowing a user to rate a film.
 
 ###List of Films
 
@@ -21,7 +21,7 @@ Example:
 
 `GET http://localhost:3000/api/films?sort=-average_rating,-year,title&fields[film]=title,description`
 
-####URI Paramters (Optional)
+####URI Parameters (Optional)
 
 * fields[film] (String) - Allows the client to specify which film attributes to include
 in the result set. Possible values include: title, description, url_slug, year
@@ -39,7 +39,7 @@ api data type, and attributes.
 
 One of the attributes returned with the film properties
 set is "average_rating". This value is computed by taking the average of all user
-ratings in the film_ratings table for a particular film. API to set a rating
+ratings in the film_ratings table for a film. API to set a rating
 is described later in this documentation.
 
 An empty array will be returned for no results. 
@@ -94,7 +94,7 @@ or
 
 `GET http://localhost:3000/api/films/1?fields[film]=title,description`
 
-####URI Paramters (Optional)
+####URI Parameters (Optional)
 
 * fields[film] (String) - Allows the client to specify which film attributes to include
 in the result set. Possible values include: title, description, url_slug, year
