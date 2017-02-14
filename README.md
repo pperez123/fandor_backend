@@ -51,7 +51,7 @@ An empty array will be returned for no results.
 "data": [
     {
         "id": 1,
-        "properties": {
+        "attributes": {
             "title": "A Wonderful Film",
             "description": "A cute film about lots of wonderful stuff.",
             "url_slug": "a_wonderful_film",
@@ -67,7 +67,7 @@ An empty array will be returned for no results.
     },
     {
         "id": 2,
-        "properties": {
+        "attributes": {
             "title": "All About Fandor",
             "description": "Documentary telling the tail of Fandor.",
             "url_slug": "all_about_fandor",
@@ -116,7 +116,7 @@ id's for related films and the average user rating.
 {
 "data": {
     "id": 1,
-    "properties": {
+    "attributes": {
         "title": "A Wonderful Film",
         "description": "A cute film about lots of wonderful stuff.",
         "url_slug": "a_wonderful_film",
