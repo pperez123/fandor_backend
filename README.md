@@ -7,13 +7,13 @@ The developer chose the Ruby on Rails web development framework for implementati
  - Include average rating for a film as one of its attributes
  - Requests and responses should follow the [JSON API specification](http://jsonapi.org/)
 
-##Films API
+## Films API
 
 The primary endpoint for the supported film data operations is "/api/films".
 This endpoint supports GET and PUT RESTful operations related to retrieving the full list of films,
 a single film, and allowing a user to rate a film.
 
-###List of Films
+### List of Films
 
 `GET /api/films{?fields[films],sort}`
 
@@ -21,7 +21,7 @@ Example:
 
 `GET http://localhost:3000/api/films?sort=-average_rating,-year,title&fields[film]=title,description`
 
-####URI Parameters (Optional)
+#### URI Parameters (Optional)
 
 * fields\[film] (String) - Allows the client to specify which film attributes to include
 in the result set. Possible values include: title, description, url_slug, year
@@ -30,7 +30,7 @@ related_film_ids, and average_rating.
  applied in the order specified. The sort order for each field is ascending unless prefixed with
  a minus/hyphen ("-"), in which case it will be in descending order.
 
-####Description
+#### Description
 
 To retrieve the list of all films, the client sends a GET request to "/api/films".
 If successful, the client will receive a 200 response with a JSON data payload 
@@ -44,7 +44,7 @@ is described later in this documentation.
 
 An empty array will be returned for no results. 
 
-####Sample Response
+#### Sample Response
 
 ```json
 {
@@ -94,23 +94,23 @@ Example:
 
 `GET http://localhost:3000/api/films/1?fields[film]=title,description`
 
-####URI Parameters (Optional)
+#### URI Parameters (Optional)
 
 * fields\[film] (String) - Allows the client to specify which film attributes to include
 in the result set. Possible values include: title, description, url_slug, year
 related_film_ids, and average_rating.
 
-####Description
+#### Description
 
 To retrieve data on a single film, the client sends a GET request to "/api/films/"
 and appends the id of the requested film. If the film exists, the client receives a JSON
 payload containing the film id, api data type, and attributes, including a list of 
 id's for related films and the average user rating.
 
-####Errors
+#### Errors
 * 404 Not Found - If movie with submitted id does not exist, the client will get a JSON error message: "Film not found."
 
-####Sample Response
+#### Sample Response
 
 ```json
 {
@@ -133,7 +133,7 @@ id's for related films and the average user rating.
 }
 ```
 
-###Rating a Specific Film
+### Rating a Specific Film
 
 `PUT /api/films/{id}`
 
@@ -144,7 +144,7 @@ Example:
 To allow a user to rate a specific film, the client sends a PUT request to "/api/films/"
 and appends the film's id. The request must also contain a properly formatted json body.
 
-####Request
+#### Request
 The request should contain the following header:
 
 `Content-Type: application/json`
@@ -166,13 +166,13 @@ The body of the request should be formatted in JSON as follows:
 * _user_id_ - Id of user that is rating the film.
 * _rating_ - Numerical rating value.
 
-####Errors
+#### Errors
 * 404 Not Found - If the movie to rate does not exist the client will receive a "Film not 
 found." error message.
 * 406 Not Acceptable - If the user_id parameter is missing from the request, 
 the rating process will abort with a "No user id for rating." error message.
 
-####Sample Response
+#### Sample Response
 If the rating process is successful, the client will receive a JSON response like the following:
 
 ```json
